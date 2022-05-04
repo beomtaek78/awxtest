@@ -10,7 +10,7 @@
         state: present
     - name: index.html
       get_url:
-        url: https://www.naver.com
+        url: https://www.nginx.com
         dest: /var/www/html
     - name: service 
       service:
