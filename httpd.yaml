@@ -4,9 +4,9 @@
   become: yes
   
   tasks:
-    - name: httpd install
-      yum:
-        name: httpd
+    - name: nginx
+      apt:
+        name: nginx
         state: present
     - name: index.html
       get_url:
@@ -14,11 +14,11 @@
         dest: /var/www/html
     - name: service 
       service:
-        name: httpd
+        name: nginx
         state: started
         enabled: true
-    - name: firewalld
+    - name: ufw
       service:
-        name: firewalld
+        name: ufw
         state: stopped
         enabled: false
